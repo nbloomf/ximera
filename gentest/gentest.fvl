@@ -17,23 +17,20 @@ Factor the following polynomials.
 [define {{int}} @xss := Choose(10; @pairs)]#
 
 [for {int} @cs in @xss say [#
-  % Extract the roots from each pair
   [define int @a := AtPos(@cs; 1)]#
   [define int @b := AtPos(@cs; 2)]#
 
-  % Define our polynomial (x-a)(x-b) and format it nicely
   [define ^int @p := Poly(1.x^2; neg (@a + @b).x^1; (@a * @b).1)]#
   [define str @prob := Format(^int; latex; @p)]#
 
-  % Define the solution and format it nicely
   [define ^int @h := Poly(1.x^1; neg @a . 1)]#
   [define ^int @k := Poly(1.x^1; neg @b . 1)]#
   [define str @soln := "(" ++ Format(^int; latex; @h) ++ ")(" ++ Format(^int; latex; @k) ++ ")"]#
 
-  \begin{question}
-  % Display the problem
+\begin{question}
   $@prob = \answer{@soln}$
-  \end{question}
+\end{question}
+
 ] endfor]#
 
 \end{document}
