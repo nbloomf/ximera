@@ -4,82 +4,60 @@
 
 \title{A Generator Test}
 \begin{abstract}
-This is a test.
+This is a proof-of-concept for generated problems.
 \end{abstract}
 \maketitle
 
-In this example, we will construct a worksheet of 10 basic quadratic polynomial factorization problems with small integer roots. In my experience, the best way to do this is to work "backwards"; start with the kind of answer we want and think carefully about the skills needed to get there.
+Factor the following polynomials.
 
-
-Rather than starting with 10 polynomials, let's start with 10 pairs of roots. We can represent these in feivel as a list of lists of integers. Let's say each root is an integer between -6 and 6, not including 0 (since allowing 0 as a root yields a fundamentally different kind of problem).
-\begin{center}
-\verb|define {int} @roots := Range(-6;6) \\ {0}|
-\end{center}
-
-Next we can choose all pairs $(a,b)$ of possible roots such that $a+b \neq 0$, so we don't end up with a difference of squares (that's a different problem). We can also force $a < b$ to avoid getting duplicates. (Here we are using list builder notation, similar to set builder notation.)
-\begin{center}
-\verb|define {{int}} @pairs := Build({@a;@b}; int @a <- @roots;|
-\verb|int @b <- @roots; NotEqual(int; @a+@b; 0); LT(int; @a; @b))|
-\end{center}
-
-Finally, we choose 10 pairs at random.
-\begin{center}
-\verb|define {{int}} @xss := Choose(10; @pairs)|
-\end{center}
-
-Now we will iterate through this list of pairs, formatting a polynomial problem for each one.
-
-\begin{enumerate}
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 - 2x - 15 = (x + 3)(x - 5)$
+  $x^2 + 7x + 12 = \answer{(x + 4)(x + 3)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 + 6x + 8 = (x + 4)(x + 2)$
+  $x^2 + 5x + 6 = \answer{(x + 3)(x + 2)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 + 5x + 4 = (x + 4)(x + 1)$
+  $x^2 + x - 6 = \answer{(x + 3)(x - 2)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 - 3x - 10 = (x + 2)(x - 5)$
+  $x^2 + 4x - 5 = \answer{(x + 5)(x - 1)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 + 3x - 10 = (x + 5)(x - 2)$
+  $x^2 + 10x + 24 = \answer{(x + 6)(x + 4)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 - 5x + 6 = (x - 2)(x - 3)$
+  $x^2 + 11x + 30 = \answer{(x + 6)(x + 5)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 + 4x - 12 = (x + 6)(x - 2)$
+  $x^2 - 3x - 10 = \answer{(x + 2)(x - 5)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 - 2x - 24 = (x + 4)(x - 6)$
+  $x^2 - 5x + 6 = \answer{(x - 2)(x - 3)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 - 3x - 18 = (x + 3)(x - 6)$
+  $x^2 - 4x - 5 = \answer{(x + 1)(x - 5)}$
 % Extract the roots from each pair
   % Define our polynomial (x-a)(x-b) and format it nicely
   % Define the solution and format it nicely
   % Display the problem
-  \item $x^2 - 8x + 12 = (x - 2)(x - 6)$
-\end{enumerate}
-
+  $x^2 + 3x + 2 = \answer{(x + 2)(x + 1)}$
 \end{document}
