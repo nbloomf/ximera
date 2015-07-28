@@ -1,14 +1,14 @@
 \documentclass{ximera}
-\title{\LaTeX\ Commands}
+\title{Question and answer types}
 \begin{document}
 
 \begin{abstract}
-  This section explores the \LaTeX\ commands Ximera supports. 
+  This section explores the different types of exercises Ximera supports. 
 \end{abstract}
 
 \maketitle
 
-Ximera supports many commands.
+Ximera supports many exercise types.
 
 
 \section{Basic Function Answer Type}
@@ -59,14 +59,14 @@ Enter the matrix  \(\begin{bmatrix} x & y \\ xy & z+1 \end{bmatrix}\)
 
 \begin{question}
   Enter the matrix  \(\begin{bmatrix} x & y \\ xy & z+1 \end{bmatrix}\)
-  \begin{matrixAnswer}
+\begin{matrixAnswer}
     correctMatrix = [['x','y'],['xy','z+1']]
-   % This doesn't seem to compile.
-  \end{matrixAnswer}
+\end{matrixAnswer}
+   % This doesn't seem to compile?
 \end{question}
 
 \begin{remark}
-  The plus and minus muttons add and subtract columns or rows.  
+  The plus and minus buttons add and subtract columns or rows.  
 \end{remark}
 
 
@@ -158,7 +158,7 @@ This is some python
 
 \section{Parts}
 
-\begin{parts}
+\begin{parts} %this will be deprecated
 \item Part 1
 \item Part 2
 \end{parts}
@@ -175,7 +175,7 @@ This is a shuffle environment. What goes here?
 
 \section{Solution}
 
-\begin{solution}
+\begin{solution} %this will be deprecated
 What is this?
 \end{solution}
 
@@ -217,29 +217,27 @@ What is this? (there are other theorems)
 
 \section{Word Choice}
 
-\wordChoice[wrong 1, wrong 2]{right}
+\wordChoice[wrong1, wrong2]{right}
 
 
 \section{Linking}
 
 You should see some links here.
 
-\video{https://www.youtube.com/watch?v=dQw4w9WgXcQ}
-\youtube{https://www.youtube.com/watch?v=dQw4w9WgXcQ}
-\link{https://www.youtube.com/watch?v=dQw4w9WgXcQ}
-\link{}
+\video{https://www.youtube.com/watch?v=dQw4w9WgXcQ} %doesn't work in html
+\youtube{https://www.youtube.com/watch?v=dQw4w9WgXcQ} %doesn't work in html
+\link{https://www.youtube.com/watch?v=dQw4w9WgXcQ} %works
+\link{} %links to same page online, does nothing in pdf
 
 
 
-\section{Prerequisites}
+\section{Metadata}
 
-\prerequisites{This is a prerequisite}
+There is some metadata here.
 
+\prerequisites{This is a prerequisite} %metadata
 
-
-\section{Outcome}
-
-\outcome{This is an outcome.}
+\outcome{This is an outcome.} %metadata
 
 
 
