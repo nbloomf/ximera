@@ -1,0 +1,7 @@
+*.aux
+answertypes/answerTypes.jax
+*.log
+*.pdf
+answertypes/answerTypes.synctex.gz
+*.cut
+answertypes/answerTypes.out
