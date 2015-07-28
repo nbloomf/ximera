@@ -1,0 +1,9 @@
+\documentclass{ximera}
+
+\begin{document}
+
+[import (kreb-scout/ca/poly/factor/quad.fvl)]#
+
+@monic.int.roots
+
+\end{document}
