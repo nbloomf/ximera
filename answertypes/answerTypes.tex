@@ -11,7 +11,8 @@
 Ximera supports many exercise types.
 
 
-\section{Basic Function Answer Type}	
+\section{Basic Function Answer Type}
+
 \begin{verbatim}
          $3\times 2 = $ \answer{6}
 \end{verbatim}
@@ -21,6 +22,7 @@ Will produce the question:
 \begin{question}
   $3\times 2 = $ \answer{6}
 \end{question}
+
 
 In addition to numerical answers, we also support elementary functions:
 
@@ -44,37 +46,7 @@ $100$ different complex numbers, and seeing if the results are
 of these functions to circumvent domain issues.
 \end{remark}
 
-\section{Multiple Choice Answer Type}
-
-\begin{verbatim}
-\begin{question}
-	Which of the following functions has a graph which is a parabola?
-	\begin{multipleChoice}
-		\choice[correct]{$y=x^2+3x-3$}
-		\choice{$y = \frac{1}{x+2}$}
-		\choice{$y=3x+1$}
-	\end{multipleChoice}
-\end{question}
-\end{verbatim}
-
-Produces:
-
-\begin{question}
-  Which of the following functions has a graph which is a parabola?
-  \begin{multipleChoice}
-    \choice[correct]{$y=x^2+3x-3$}
-    \choice{$y = \frac{1}{x+2}$}
-    \choice{$y=3x+1$}
-  \end{multipleChoice}
-\end{question}
-
-\begin{remark}
-  Multiple choice questions are automatically shuffled.
-\end{remark}
-
-\section{Matrix Answer Type}
-
-We also support matrices of expressions.
+We also support matrices of expressions in answers.
 
 \begin{verbatim}
 \begin{question}
@@ -87,16 +59,56 @@ Enter the matrix  \(\begin{bmatrix} x & y \\ xy & z+1 \end{bmatrix}\)
 
 \begin{question}
   Enter the matrix  \(\begin{bmatrix} x & y \\ xy & z+1 \end{bmatrix}\)
-\begin{matrixAnswer}
+  \begin{matrixAnswer}
     correctMatrix = [['x','y'],['xy','z+1']]
-\end{matrixAnswer}
+   % This doesn't seem to compile.
+  \end{matrixAnswer}
 \end{question}
 
 \begin{remark}
   The plus and minus muttons add and subtract columns or rows.  
 \end{remark}
 
-\section{free-response}
+
+
+\section{Multiple Choice Answer Type}
+
+\begin{verbatim}
+\begin{question}
+Which of the following functions has a graph which is a parabola?
+  \begin{multipleChoice}
+    \choice[correct]{$y=x^2+3x-3$}
+    \choice{$y = \frac{1}{x+2}$}
+    \choice{$y=3x+1$}
+  \end{multipleChoice}
+\end{question}
+\end{verbatim}
+
+Produces:
+
+\begin{question}
+<<<<<<< HEAD
+  Enter the matrix  \(\begin{bmatrix} x & y \\ xy & z+1 \end{bmatrix}\)
+\begin{matrixAnswer}
+    correctMatrix = [['x','y'],['xy','z+1']]
+\end{matrixAnswer}
+=======
+  Which of the following functions has a graph which is a parabola?
+  \begin{multipleChoice}
+    \choice[correct]{$y=x^2+3x-3$}
+    \choice{$y = \frac{1}{x+2}$}
+    \choice{$y=3x+1$}
+  \end{multipleChoice}
+>>>>>>> origin/master
+\end{question}
+
+\begin{remark}
+  Multiple choice questions are automatically shuffled.
+\end{remark}
+
+
+
+\section{Free-response}
 
 The free response environment gives students access to a \LaTeX\ editor. 
 
@@ -108,5 +120,142 @@ The free response environment gives students access to a \LaTeX\ editor.
 Clicking on \verb!View model solution! shows the user
 whatever you typed in the  \verb!freeResponse! environment.
 \end{remark}
+
+
+
+\section{Explanation}
+
+\begin{explanation}
+This is an explanation.
+\end{explanation}
+
+
+
+\section{Example}
+
+\begin{example}
+This is an example.
+\end{example}
+
+
+
+\section{Prompt}
+
+\begin{prompt}
+This is a prompt.
+\end{prompt}
+
+
+
+\section{Code}
+
+\begin{code}
+This is some code.
+\end{code}
+
+
+
+\section{Python}
+
+\begin{python}
+This is some python
+\end{python}
+
+
+
+\section{Parts}
+
+\begin{parts}
+\item Part 1
+\item Part 2
+\end{parts}
+
+
+
+\section{Shuffle}
+
+\begin{shuffle}
+This is a shuffle environment. What goes here?
+\end{shuffle}
+
+
+
+\section{Solution}
+
+\begin{solution}
+What is this?
+\end{solution}
+
+
+
+\section{Interactive}
+
+\begin{interactive}
+What is this?
+\end{interactive}
+
+
+
+\section{Feedback}
+
+\begin{feedback}
+What is this?
+\end{feedback}
+
+
+
+\section{Dialogue}
+
+\begin{dialogue}
+What is this?
+\end{dialogue}
+
+
+
+\section{Theorems}
+
+\begin{theorems}
+What is this?
+\end{theorems}
+
+
+
+\section{Word Choice}
+
+\wordChoice[wrong 1, wrong 2]{right}
+
+
+\section{Linking}
+
+You should see some links here.
+
+\video{https://www.youtube.com/watch?v=dQw4w9WgXcQ}
+\youtube{https://www.youtube.com/watch?v=dQw4w9WgXcQ}
+\link{https://www.youtube.com/watch?v=dQw4w9WgXcQ}
+\link{}
+
+
+
+\section{Prerequisites}
+
+\prerequisites{This is a prerequisite}
+
+
+
+\section{Outcome}
+
+\outcome{This is an outcome.}
+
+
+
+\section{Xarma Boost}
+
+\begin{xarmaBoost}
+no idea here.
+
+\begin{question}
+Maybe questions go here? \answer{Let's find out.}
+\end{question}
+\end{xarmaBoost}
 
 \end{document}
